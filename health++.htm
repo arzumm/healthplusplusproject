@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+        <style>
+            footer {
+                background-color: gray;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+
+            body {
+                font-family: Arial;
+                font-size: 17px;
+                padding: 8px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .row {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                margin: 0 -16px;
+            }
+
+            .col-25 {
+                -ms-flex: 25%;
+                flex: 25%;
+            }
+
+            .col-50 {
+                -ms-flex: 50%;
+                flex: 50%;
+            }
+
+            .col-75 {
+                -ms-flex: 75%;
+                flex: 75%;
+            }
+
+            .col-25,
+            .col-50,
+            .col-75 {
+                padding: 0 16px;
+            }
+
+            .MedicalApplication {
+                background-color: #f2f2f2;
+                padding: 5px 20px 15px 20px;
+                border: 1px solid lightgrey;
+                border-radius: 3px;
+            }
+
+            input[type=text] {
+                width: 100%;
+                margin-bottom: 20px;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            label {
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            .icon-container {
+                margin-bottom: 20px;
+                padding: 7px 0;
+                font-size: 24px;
+            }
+
+            .btn {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px;
+                margin: 10px 0;
+                border: none;
+                width: 100%;
+                border-radius: 3px;
+                cursor: pointer;
+                font-size: 17px;
+            }
+
+                .btn:hover {
+                    background-color: #45a049;
+                }
+
+            a {
+                color: #2196F3;
+            }
+
+            hr {
+                border: 1px solid lightgrey;
+            }
+
+            span.price {
+                float: right;
+                color: grey;
+            }
+
+            div.container {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+
+            .main {
+                padding: 16px;
+                margin-bottom: 30px;
+            }
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+</head>
+<!--Body starts here:-->
+
+<body>
+    <h1 style="text-align:center ; background-color:dodgerblue ; font-size: 40px; color: white;"> Digitalizing Medical Data </h1>
+    <div class="w3-tab"> </div>
+
+    <!--class for navigation bar-->
+    <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button" onclick="opentab('home')">Home</button>
+        <button class="w3-bar-item w3-button" onclick="opentab('about')">About</button>
+        <button class="w3-bar-item w3-button" onclick="opentab('login')">Login</button>
+    </div>
+
+    <div id="Home" class="w3-tab tab">
+        <h3>Welcome to our main page</h3>
+    </div>
+
+
+    <div id="About" class="w3-tab tab">
+        
+   
+    </div>
+
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+   
+    <!--script to run navigation bar-->
+    <script>
+        function opentab(tab) {
+            var i;
+            var x = document.getElementsByClassName("tab");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tab).style.display = "block";
+        }
+    </script>
+
+    <!--Home page-->
+    <div class="Home">
+        <div class="row">
+            <div class="col-75">
+                <div class="MedicalApplication">
+                    <form action="/action_page.php">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <h2>Personal Information</h2>
+                                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                <input type="text" id="fname" name="Full Name" placeholder="Ex. Adam Smith" />
+                                <label for="Age"><i class="fa fa-age"></i> Age </label>
+                                <input type="text" id="age" name="age" />
+                                <label for="address"><i class="fa fa-address-card-o"></i> Address</label>
+                                <input type="text" id="adr" name="address" placeholder="Ex. 123 Main Street">
+                                <label for="Phone Number"><i class="fa fa-Phone Number"></i> Phone Number</label>
+                                <input type="number" id="phone number" name="Phone Number" placeholder="Ex. (123)-456-789">
+                                <label for="SSN">Social Security Number</label>
+                                <input type="number" id="Social Security Number" name="Social Security Number" placeholder="Ex. 123-45-6789">
+
+                                <label for="DOB"><i class="fa fa-DOB"></i> Date of Birth(mm/dd/yy)</label>
+                                <input type="number" id="DOB" name="DOB" placeholder="Ex. 12/25/2000">
+
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state" name="state" placeholder="Ex. NY">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="zip">Zip</label>
+                                        <input type="text" id="zip" name="zip" placeholder="Ex. 10001">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--same form, new column-->
+                            <div class="col-50">
+                                <h2>Medical Information</h2>
+                                <label for="Primary Care Physician">Primary Care Physician</label>
+                                <input type="text" id="Primary Care Physician" name="Primary Care Physician" placeholder="Ex. Adam Smith">
+                                <label for="health insurance">Health Insurance</label>
+                                <input type="text" id="health insurance" name="health insurance">
+                                <label for="Allergies">Allergies</label>
+                                <input type="text" id="Allergies" name="Allergies">
+                                <label for="Medications"><i class="fa fa-Medications"></i> Medications</label>
+                                <input type="text" id="Medications" name="Medications" />
+
+                                <input type="submit" value="Submit" class="btn" />
+                            </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>To download the document, press <kbd>Ctrl + S</kbd></p>
+
+    <footer>
+        <p>  All rights reserved. </p>
+    </footer>
+</body>
+</html>
