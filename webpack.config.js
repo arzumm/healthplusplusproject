@@ -9,6 +9,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/i,
+        use: [ // handlebars loader expects raw resource string
+  
+        'css-loader'],
+      },
+
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
