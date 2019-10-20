@@ -22,7 +22,7 @@
         .divTable {
             display: table;
             width: auto;
-            height: 30px;
+            height: 60px;
             background-color: #eee;
             border: 1px solid #666666;
             border-spacing: 20px;
@@ -42,32 +42,97 @@
 
         body {
             font-family: Arial;
+            font-size: 17px;
+            padding: 8px;
         }
 
-        input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        * {
             box-sizing: border-box;
         }
 
-        input[type=submit] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 0 -16px;
         }
 
-            input[type=submit]:hover {
+        .col-25 {
+            -ms-flex: 25%;
+            flex: 25%;
+        }
+
+        .col-50 {
+            -ms-flex: 50%;
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%;
+            flex: 75%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .MedicalApplication {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+            .btn:hover {
                 background-color: #45a049;
             }
+
+        a {
+            color: #2196F3;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
 
         div.container {
             border-radius: 5px;
@@ -104,57 +169,164 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+
+                .tab button:hover {
+                    background-color: #ddd;
+                }
+
+
+                .tab button.active {
+                    background-color: #ccc;
+                }
+
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
     </style>
 </head>
+<!--Body starts here:-->
+
 <body>
+    <!--top navigation bar-->
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#About">About</a>
+        <a href="#home"class="active">Home</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </div>
+
     <div style="padding-left:16px">
         <h1 style="text-align:center ; background-color:dodgerblue ; font-size: 40px; color: white;"> Digitalizing Medical Data </h1>
+    </div>
+    <img src="https://healthplusplus.github.io/img/logo_colored.png " alt="health++" style="width:50%;">
+
+    <!--Javascript to display User Bar-->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+    <!--Home page-->
+    <div class="Home">
+        <div class="row">
+            <div class="col-75">
+                <div class="MedicalApplication">
+                    <form action="/action_page.php">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <h2>Personal Information</h2>
+                                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                <input type="text" id="fname" name="Full Name" placeholder="Ex. Adam Smith" />
+                                <label for="Age"><i class="fa fa-age"></i> Age </label>
+                                <input type="text" id="age" name="age" />
+                                <label for="address"><i class="fa fa-address-card-o"></i> Address</label>
+                                <input type="text" id="adr" name="address" placeholder="Ex. 123 Main Street">
+                                <label for="Phone Number"><i class="fa fa-Phone Number"></i> Phone Number</label>
+                                <input type="number" id="phone number" name="Phone Number" placeholder="Ex. (123)-456-789">
+                                <label for="SSN">Social Security Number</label>
+                                <input type="number" id="Social Security Number" name="Social Security Number" placeholder="Ex. 123-45-6789">
+
+                                <label for="DOB"><i class="fa fa-DOB"></i> Date of Birth(mm/dd/yy)</label>
+                                <input type="number" id="DOB" name="DOB" placeholder="Ex. 12/25/2000">
+
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state" name="state" placeholder="Ex. NY">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="zip">Zip</label>
+                                        <input type="text" id="zip" name="zip" placeholder="Ex. 10001">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--same form, new column-->
+                            <div class="col-50">
+                                <h2>Medical Information</h2>
+                                <label for="Primary Care Physician">Primary Care Physician</label>
+                                <input type="text" id="Primary Care Physician" name="Primary Care Physician" placeholder="Ex. Adam Smith">
+                                <label for="health insurance">Health Insurance</label>
+                                <input type="text" id="health insurance" name="health insurance">
+                                <label for="Allergies">Allergies</label>
+                                <input type="text" id="Allergies" name="Allergies">
+                                <label for="Medications"><i class="fa fa-Medications"></i> Medications</label>
+                                <input type="text" id="Medications" name="Medications" />
+
+                            </div>
+                            <form id="Table">
+                                <div class="divTable">
+                                    <div class="headRow">
+                                        <div class="divCell" align="left">Full Name:</div>
+
+                                    </div>
+                                    <div class="divRow">
+                                        <div class="divCell">Age:</div>
+                                        <div class="divCell">Date of Birth: </div>
+                                        <div class="divCell">Address: </div>
+                                        <div class="divCell">Mobile Number:</div>
+                                        <div class="divCell">SSN: </div>
+
+                                    </div>
+                                    <div class="divRow">
+                                        <div class="divCell">Primary Care Physician: </div>
+                                        <div class="divCell">Health Insurance: </div>
+                                        <div class="divCell">Allergies</div>
+                                        <div class="divCell">Medications: </div>
+                                    </div>
+                                    <input type="submit" value="Submit">
+
+                                </div>
+                            </form>
 
 
-        <img src="https://healthplusplus.github.io/img/logo_colored.png " alt="health++" style="width:50%;">
-        <section>
-            <div class="Home">
-                <form action="/action_page.php">
-                    <label for="fname">"First Name"></label>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..." />
+                        </div>
 
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-
-                    <label for="age">Age</label>
-                    <input type="number" id="age" name="age" placeholder="Your age is..">
-
-
-                    <label for="DOB">Date of Birth(mm/dd/yy)</label>
-                    <input type="number" id="lname" name="Date of Birth" placeholder="Your Date of Birth..">
-                    <br /><br />
-
-                    <label for="Address">Address</label>
-                    <input type="text" id="address" name="Address" placeholder="Your address is ..">
-                    <br /><br />
-
-                    <label for="Meds">Medications</label>
-                    <input type="text" id="Medications" name="Medications">
-
-                    <label for="Allergies">Allergies</label>
-                    <input type="text" id="Allergies" name="Allergies">
-
-
-                    <label for="Phone Number">Phone Number</label>
-                    <input type="number" id="Phone Number" name="Phone Number" placeholder="(123)-456-789">
-
-                    <input type="submit" value="Submit">
-                </form>
+                    </form>
+                </div>
             </div>
-        </section>
+        </div>
+    </div>
+    <p>To download the document, press <kbd>Ctrl + S</kbd></p>
+
+    <footer>
+        <p> Health++, All rights reserved. Terms and Conditions.</p>
+    </footer>
+    <div class=""
+    <!--<div id="About" class="tabcontent">
+        <h1>Hello! </h1>
     </div>
 
+    <div id="Contact" class="tabcontent">
+        <h1>Hello! </h1>
+    </div>-->
     <!-- Draggable items to enter personal info -->
     <!--<div class="droptarget">
                    <p draggable="true" id="dragtarget"> + First Name: </p>
@@ -164,31 +336,7 @@
                <p id="demo"></p>-->
     <!--display table-->
 
-    <form id="form1">
-        <div class="divTable">
-            <div class="headRow">
-                <div class="divCell" align="left">First Name:</div>
-                <div class="divCell">Last Name: </div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Age:</div>
-                <div class="divCell">Date of Birth: </div>
-                <div class="divCell">Address: </div>
-                <div class="divCell">Mobile Number:</div>
 
-            </div>
-            <div class="divRow">
-                <div class="divCell">Allergies</div>
-                <div class="divCell">Medications: </div>
-            </div>
-
-        </div>
-    </form>
-
-    <p>To download the document, press <kbd>Ctrl + S</kbd></p>s
-    <footer>
-        <p>Health++, All rights reserved. </p>
-    </footer>
 
     <script>
         /* Events fired on the drag target */
