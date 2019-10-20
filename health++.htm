@@ -1,37 +1,129 @@
 <!DOCTYPE html>
 <html>
+
+
 <style>
-    #mydiv {
+
+    header {
+        background-color:dodgerblue ;
+        padding: 30px;
+        text-align: center;
+        font-size: 40px;
+        color: white;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 60px;
+        text-align: left;
+    }
+
+    table {
+        border-spacing: 15px;
+    }
+
+    .item {
+        background-color: white;
+        color: red;
+        padding: 2px;
+    }
+
+    #item {
         position: absolute;
         z-index: 9;
         background-color: #f1f1f1;
-        text-align: center;
+        text-align: left;
         border: 1px solid #d3d3d3;
     }
 
-    #mydivheader {
+    #item {
         padding: 10px;
         cursor: move;
         z-index: 10;
         background-color: #2196F3;
         color: #fff;
     }
+
+    #table {
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+  /*Style the footer*/ 
+    footer {
+        background-color: lightgray;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
 </style>
-<body>
-    <h1>Draggable DIV Element</h1>
+</<body>
 
-    <p>Drag the appropriate title to the rectangle</p>
-
-    <div id="mydiv">
-        <div id="mydivheader">Click here to move</div>
-        <p>Name: </p>
-        <p>Sex: </p>
-        <p>Age: </p>
-        <p>Date of Birth: </p>
-    </div>
+    <h1 align="center";> Digitalizing Medical Data </h1>
+    <br />
+    <!-- Draggable items to enter personal info-->
+    <section>
+        <h2 style="background-color: Tomato; color:white"> Drag the title to its respective box </h2>
+        <div style="border: 2px solid Red;">
+            <div id="mydiv">
+                <div id="mydivheader">  +  </div>
+                <p> First Name: </p>
+                <p> Last Name: </p>
+                <p> Age: </p>
+                <p> Date of Birth: </p>
+                <p> Address </p>
+            </div>
+            <!--<div id="item">
+            <div id="itemheader">  +  </div>
+            <p> Last Name: </p>
+        </div>
+        <div id="item">
+            <div id="itemheader">  +  </div>
+            <p> Age: </p>
+        </div>
+        <div id="item">
+            <div id="itemheader">  +  </div>
+            <p> Date of Birth: </p>
+        </div>
+        <div id="item">
+            <div id="itemheader">  +  </div>
+            <p> Address: </p>
+        </div>-->
+        </div>
+    </section>
+    <!--display table-->
+    <section>
+        <table style="width:100%">
+            <tr>
+                <th>First Name: </th>
+                <th>Last Name: </th>
+                <th>Age: </th>
+            </tr>
+            
+            <tr>
+                <th>Date of Birth: </th>
+                <th>Sex: </th>
+                <th>Address: </th>
+            </tr>
+          
+            <tr>
+                <th>Reason for Visit: </th>
+                <th>Allergies: </th>
+                <th>Mobile number: </th>
+            </tr>
+           
+            <
+        </table>
+    </section>
+    <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+    <footer>
+        <p>Health++, All rights reserved. </p>
+    </footer>
 
     <script>
-        //Make the DIV element draggagle:
         dragElement(document.getElementById("mydiv"));
 
         function dragElement(elmnt) {
@@ -40,10 +132,8 @@
                 /* if present, the header is where you move the DIV from:*/
                 document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
             } else {
-                
                 elmnt.onmousedown = dragMouseDown;
             }
-
             function dragMouseDown(e) {
                 e = e || window.event;
                 e.preventDefault();
@@ -54,7 +144,6 @@
                 // call a function whenever the cursor moves:
                 document.onmousemove = elementDrag;
             }
-
             function elementDrag(e) {
                 e = e || window.event;
                 e.preventDefault();
@@ -67,7 +156,6 @@
                 elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
                 elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
             }
-
             function closeDragElement() {
                 /* stop moving when mouse button is released:*/
                 document.onmouseup = null;
@@ -75,6 +163,5 @@
             }
         }
     </script>
-
 </body>
 </html>
