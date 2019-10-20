@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html>
+
+<head> </head>
+
 <style>
     
+    header1 {
+        background-color:dodgerblue ;
+        padding: 30px;
+        text-align: center;
+        font-size: 40px;
+        color: white;
+    }
+
     table, th, td {
-        border: 1px black;
+        border: 1px solid black;
         border-collapse: collapse;
     }
 
     th, td {
-        padding: 5px;
+        padding: 60px;
         text-align: left;
     }
-    .item{
-        background-color:white;
-        color:red;
-        padding:2px;
+
+    table {
+        border-spacing: 15px;
     }
-    #item {
+
+    .item {
+        background-color: white;
+        color: red;
+        padding: 2px;
+    }
+
+    #mydiv {
         position: absolute;
         z-index: 9;
         background-color: #f1f1f1;
@@ -24,35 +41,46 @@
         border: 1px solid #d3d3d3;
     }
 
-    #item {
+    #mydivheader {
         padding: 10px;
         cursor: move;
         z-index: 10;
         background-color: #2196F3;
         color: #fff;
     }
-    #table{
-        margin-top:30px;
-        margin-left:10px;
+
+    #table {
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+  /*Style the footer*/ 
+    footer {
+        background-color: lightgray;
+        padding: 10px;
+        text-align: center;
+        color: white;
     }
 </style>
+
 <body>
-    
-    <h1 style="font-size:40px; text-align:center;" >Digitalizing Medical Data</h1>
+
+    <h1 align="center"; background-color:dodgerblue ; font-size: 40px; color: white;> Digitalizing Medical Data </h1>
     <br />
-    <h2 style="background-color: DodgerBlue; color:white">Drag the appropriate title to the rectangle</h2>
-    <div style="border:2px solid Red;">
-        <div id="item">
+    <!-- Draggable items to enter personal info-->
+    <section>
+        <h2 style="background-color: Tomato; color:white"> Drag the title to its respective box </h2>
+        <div style="border: 2px solid Red;">
+            <div id="mydiv">
+                <div id="mydivheader">  +  </div>
+                <p> First Name: </p>
+                <p> Last Name: </p>
+                <p> Age: </p>
+                <p> Date of Birth: </p>
+                <p> Address </p>
+            </div>
+            <!--<div id="item">
             <div id="itemheader">  +  </div>
-            <p> First Name: </p>
             <p> Last Name: </p>
-            <p> Age: </p>
-            <p> Date of Birth: </p>
-            <p> Address </p>
-        </div>
-        <div id="item">
-            <div id="itemheader">  +  </div>
-            <p> Last Name: </p>
         </div>
         <div id="item">
             <div id="itemheader">  +  </div>
@@ -64,18 +92,39 @@
         </div>
         <div id="item">
             <div id="itemheader">  +  </div>
-            <p> Address </p>
+            <p> Address: </p>
+        </div>-->
         </div>
-        <table style="width:25%">
+    </section>
+    <!--display table-->
+    <section>
+        <table style="width:100%">
             <tr>
-                <th>FirstName: </th>
-                <th>LastName: </th>
+                <th>First Name: </th>
+                <th>Last Name: </th>
                 <th>Age: </th>
+            </tr>
+            
+            <tr>
                 <th>Date of Birth: </th>
                 <th>Sex: </th>
+                <th>Address: </th>
             </tr>
+          
+            <tr>
+                <th>Reason for Visit: </th>
+                <th>Allergies: </th>
+                <th>Mobile number: </th>
+            </tr>
+           
+            <
         </table>
-    </div>
+    </section>
+    <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+    <footer>
+        <p>Health++, All rights reserved. </p>
+    </footer>
+
     <script>
         dragElement(document.getElementById("mydiv"));
 
