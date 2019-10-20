@@ -1,169 +1,257 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        footer {
+            background-color: gray;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
 
-<head> </head>
+        .droptarget {
+            float: left;
+            margin: 15px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+            width: 100px;
+            height: 10px;
+        }
 
-<style>
-    
-    header1 {
-        background-color:dodgerblue ;
-        padding: 30px;
-        text-align: center;
-        font-size: 40px;
-        color: white;
-    }
+        .divTable {
+            display: table;
+            width: auto;
+            height: 30px;
+            background-color: #eee;
+            border: 1px solid #666666;
+            border-spacing: 20px;
+        }
 
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
+        .divRow {
+            display: table-row;
+            width: auto;
+        }
 
-    th, td {
-        padding: 60px;
-        text-align: left;
-    }
+        .divCell {
+            float: left;
+            display: table-column;
+            width: 200px;
+            background-color: #ccc;
+        }
 
-    table {
-        border-spacing: 15px;
-    }
+        body {
+            font-family: Arial;
+        }
 
-    .item {
-        background-color: white;
-        color: red;
-        padding: 2px;
-    }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-    #mydiv {
-        position: absolute;
-        z-index: 9;
-        background-color: #f1f1f1;
-        text-align: left;
-        border: 1px solid #d3d3d3;
-    }
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    #mydivheader {
-        padding: 10px;
-        cursor: move;
-        z-index: 10;
-        background-color: #2196F3;
-        color: #fff;
-    }
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
 
-    #table {
-        margin-top: 30px;
-        margin-left: 10px;
-    }
-  /*Style the footer*/ 
-    footer {
-        background-color: lightgray;
-        padding: 10px;
-        text-align: center;
-        color: white;
-    }
-</style>
+        div.container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
 
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                .topnav a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
 <body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#About">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div style="padding-left:16px">
+        <h1 style="text-align:center ; background-color:dodgerblue ; font-size: 40px; color: white;"> Digitalizing Medical Data </h1>
 
-    <h1 align="center"; background-color:dodgerblue ; font-size: 40px; color: white;> Digitalizing Medical Data </h1>
-    <br />
-    <!-- Draggable items to enter personal info-->
-    <section>
-        <h2 style="background-color: Tomato; color:white"> Drag the title to its respective box </h2>
-        <div style="border: 2px solid Red;">
-            <div id="mydiv">
-                <div id="mydivheader">  +  </div>
-                <p> First Name: </p>
-                <p> Last Name: </p>
-                <p> Age: </p>
-                <p> Date of Birth: </p>
-                <p> Address </p>
+
+        <img src="https://healthplusplus.github.io/img/logo_colored.png " alt="health++" style="width:50%;">
+        <section>
+            <div class="Home">
+                <form action="/action_page.php">
+                    <label for="fname">"First Name"></label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..." />
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" placeholder="Your age is..">
+
+
+                    <label for="DOB">Date of Birth(mm/dd/yy)</label>
+                    <input type="number" id="lname" name="Date of Birth" placeholder="Your Date of Birth..">
+                    <br /><br />
+
+                    <label for="Address">Address</label>
+                    <input type="text" id="address" name="Address" placeholder="Your address is ..">
+                    <br /><br />
+
+                    <label for="Meds">Medications</label>
+                    <input type="text" id="Medications" name="Medications">
+
+                    <label for="Allergies">Allergies</label>
+                    <input type="text" id="Allergies" name="Allergies">
+
+
+                    <label for="Phone Number">Phone Number</label>
+                    <input type="number" id="Phone Number" name="Phone Number" placeholder="(123)-456-789">
+
+                    <input type="submit" value="Submit">
+                </form>
             </div>
-            <!--<div id="item">
-            <div id="itemheader">  +  </div>
-            <p> Last Name: </p>
-        </div>
-        <div id="item">
-            <div id="itemheader">  +  </div>
-            <p> Age: </p>
-        </div>
-        <div id="item">
-            <div id="itemheader">  +  </div>
-            <p> Date of Birth: </p>
-        </div>
-        <div id="item">
-            <div id="itemheader">  +  </div>
-            <p> Address: </p>
-        </div>-->
-        </div>
-    </section>
+        </section>
+    </div>
+
+    <!-- Draggable items to enter personal info -->
+    <!--<div class="droptarget">
+                   <p draggable="true" id="dragtarget"> + First Name: </p>
+               </div>-->
+    <!--<div class="droptarget"></div>
+               <p style="clear:both;"><strong></strong>
+               <p id="demo"></p>-->
     <!--display table-->
-    <section>
-        <table style="width:100%">
-            <tr>
-                <th>First Name: </th>
-                <th>Last Name: </th>
-                <th>Age: </th>
-            </tr>
-            
-            <tr>
-                <th>Date of Birth: </th>
-                <th>Sex: </th>
-                <th>Address: </th>
-            </tr>
-          
-            <tr>
-                <th>Reason for Visit: </th>
-                <th>Allergies: </th>
-                <th>Mobile number: </th>
-            </tr>
-           
-            <
-        </table>
-    </section>
-    <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+
+    <form id="form1">
+        <div class="divTable">
+            <div class="headRow">
+                <div class="divCell" align="left">First Name:</div>
+                <div class="divCell">Last Name: </div>
+            </div>
+            <div class="divRow">
+                <div class="divCell">Age:</div>
+                <div class="divCell">Date of Birth: </div>
+                <div class="divCell">Address: </div>
+                <div class="divCell">Mobile Number:</div>
+
+            </div>
+            <div class="divRow">
+                <div class="divCell">Allergies</div>
+                <div class="divCell">Medications: </div>
+            </div>
+
+        </div>
+    </form>
+
+    <p>To download the document, press <kbd>Ctrl + S</kbd></p>s
     <footer>
         <p>Health++, All rights reserved. </p>
     </footer>
 
     <script>
-        dragElement(document.getElementById("mydiv"));
+        /* Events fired on the drag target */
 
-        function dragElement(elmnt) {
-            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            if (document.getElementById(elmnt.id + "header")) {
-                /* if present, the header is where you move the DIV from:*/
-                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-            } else {
-                elmnt.onmousedown = dragMouseDown;
+        document.addEventListener("dragstart", function (event) {
+            // The dataTransfer.setData() method sets the data type and the value of the dragged data
+            event.dataTransfer.setData("Text", event.target.id);
+
+            // Output some text when starting to drag the p element
+            document.getElementById("demo").innerHTML = "Started to drag";
+
+            // Change the opacity of the draggable element
+            event.target.style.opacity = "0.4";
+        });
+
+        // While dragging the p element, change the color of the output text
+        document.addEventListener("drag", function (event) {
+            document.getElementById("demo").style.color = "red";
+        });
+
+        // Output some text when finished dragging the p element and reset the opacity
+        document.addEventListener("dragend", function (event) {
+            document.getElementById("demo").innerHTML = "Finished dragging";
+            event.target.style.opacity = "1";
+        });
+
+        /* Events fired on the drop target */
+
+        // When the draggable p element enters the droptarget, change the DIVS's border style
+        document.addEventListener("dragenter", function (event) {
+            if (event.target.className == "droptarget") {
+                event.target.style.border = "3px dotted red";
             }
-            function dragMouseDown(e) {
-                e = e || window.event;
-                e.preventDefault();
-                // get the mouse cursor position at startup:
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                document.onmouseup = closeDragElement;
-                // call a function whenever the cursor moves:
-                document.onmousemove = elementDrag;
+        });
+
+        // By default, data/elements cannot be dropped in other elements. To allow a drop, we must prevent the default handling of the element
+        document.addEventListener("dragover", function (event) {
+            event.preventDefault();
+        });
+
+        // When the draggable p element leaves the droptarget, reset the DIVS's border style
+        document.addEventListener("dragleave", function (event) {
+            if (event.target.className == "droptarget") {
+                event.target.style.border = "";
             }
-            function elementDrag(e) {
-                e = e || window.event;
-                e.preventDefault();
-                // calculate the new cursor position:
-                pos1 = pos3 - e.clientX;
-                pos2 = pos4 - e.clientY;
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                // set the element's new position:
-                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        });
+
+        /* On drop - Prevent the browser default handling of the data (default is open as link on drop)
+           Reset the color of the output text and DIV's border color
+           Get the dragged data with the dataTransfer.getData() method
+           The dragged data is the id of the dragged element ("drag1")
+           Append the dragged element into the drop element
+        */
+        document.addEventListener("drop", function (event) {
+            event.preventDefault();
+            if (event.target.className == "droptarget") {
+                document.getElementById("demo").style.color = "";
+                event.target.style.border = "";
+                var data = event.dataTransfer.getData("Text");
+                event.target.appendChild(document.getElementById(data));
             }
-            function closeDragElement() {
-                /* stop moving when mouse button is released:*/
-                document.onmouseup = null;
-                document.onmousemove = null;
-            }
-        }
+        });
     </script>
+
 </body>
 </html>
